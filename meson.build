@@ -9,7 +9,7 @@ cc = meson.get_compiler('c')
 conf = configuration_data()
 
 libglib_dep = dependency('glib-2.0',   version: '>= 2.58')
-libgtk_dep  = dependency('gtk+-4.0',   version: '>= 4.2.1')
+libgtk_dep  = dependency('gtk+-3.0',   version: '>= 3.24.29')
 libxml_dep  = dependency('libxml-2.0', version: '>= 2.9.4')
 #TODO: what are the minimum versions?
 gmodule_dep = dependency('gmodule-2.0')
@@ -74,7 +74,7 @@ configuration_inc = include_directories('.')
 config_h_in = configure_file(output: 'config.h.in', configuration: conf)
 config_h = vcs_tag(input: config_h_in, output: 'config.h')
 
-gtk_ver = 'GDK_VERSION_2_24'
+gtk_ver = 'GDK_VERSION_3_24'
 glib_ver = 'GLIB_VERSION_2_58'
 add_project_arguments([
   '-DGDK_VERSION_MIN_REQUIRED=@0@'.format(gtk_ver),
