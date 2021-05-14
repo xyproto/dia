@@ -9,7 +9,7 @@ cc = meson.get_compiler('c')
 conf = configuration_data()
 
 libglib_dep = dependency('glib-2.0',   version: '>= 2.58')
-libgtk_dep  = dependency('gtk+-2.0',   version: '>= 2.24.31')
+libgtk_dep  = dependency('gtk+-4.0',   version: '>= 4.2.1')
 libxml_dep  = dependency('libxml-2.0', version: '>= 2.9.4')
 #TODO: what are the minimum versions?
 gmodule_dep = dependency('gmodule-2.0')
@@ -99,8 +99,7 @@ test_c_args = [
   '-Wno-unused-parameter',
   '-Wold-style-definition',
   '-Wshadow',
-  # When gtk3
-  # '-Wstrict-prototypes',
+  '-Wstrict-prototypes',
   '-Wswitch-default',
   '-Wswitch-enum',
   '-Wunused-function',
